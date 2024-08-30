@@ -1,0 +1,22 @@
+# Compiled object files
+*.o
+
+# Compiled binaries
+*.exe
+*.bin
+
+
+# Cache directories
+/tmp
+/cache
+
+# Go build cache
+/go/pkg
+
+//MISC
+
+# IDE-specific files
+.vscode/
+
+# Go modules
+/go/pkg/mod
