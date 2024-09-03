@@ -5,7 +5,8 @@
 *.exe
 *.bin
 
-
+*.def
+*.dll
 # Cache directories
 /tmp
 /cache
