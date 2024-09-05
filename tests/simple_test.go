@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"sort"
 	"testing"
 )
@@ -15,10 +16,18 @@ func TestSum(t *testing.T) {
 }
 
 func TestSort(t *testing.T) {
-	testValues := []int{1, 279, 48, 12, 3}
-	sorted, _ := sortAndTotal(testValues)
-	if !sort.IntsAreSorted(sorted) {
-
-		t.Fatalf("Unsorted data %v", sorted)
+	slices := [][]int{
+		{1, 279, 48, 12, 3},
+		{-10, 0, -10},
+		{1, 2, 3, 4, 5, 6, 7},
+		{1},
+	}
+	for index, data := range slices {
+		t.Run(fmt.Sprintf("Sort #%v", index), func(subT *testing.T) {
+			sorted, _ := sortAndTotal(data)
+			if !sort.IntsAreSorted(sorted) {
+				subT.Fatalf("Unsorted data %v", sorted)
+			}
+		})
 	}
 }
